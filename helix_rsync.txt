@@ -1,0 +1,4 @@
+rsync -avzheR --progress --max-size=500K -e "ssh -p 501" kellys@helix.salisbury.edu:/home/kellys/ /home/steve/helix/
+
+rm -r /home/steve/helix/ChIP_Seq_Magda_completeWorkflow/RegulatedGene_Motifs/*
+

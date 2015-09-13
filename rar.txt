@@ -1,0 +1,7 @@
+rar e -c- NL_WD40-F.rar -pnuelinks
+
+rar cw NL_WD40-F.rar archive_comment.txt
+
+FILES=*.rar
+echo $FILES
+for i in $FILES; do rar e $i -pnuelinks -o- -x@*.part*.rar ; done

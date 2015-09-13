@@ -1,0 +1,1 @@
+scp -prP 501 kellys@helix.salisbury.edu:/home/kellys/Resume /home/steve/Resume/helix_files/Resume_Backup/
