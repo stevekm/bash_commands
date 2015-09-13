@@ -1,0 +1,3 @@
+tar -cvzf /path/to/output.tar.gz /path/to/input/directory_or_files
+(trusty)steve@localhost:~$ tar -cvzf /media/removable/USB\ Drive/smkelly.tar.gz /media/removable/USB\ Drive\ 1/smkelly/
+
