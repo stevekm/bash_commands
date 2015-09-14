@@ -4,4 +4,10 @@ rar cw NL_WD40-F.rar archive_comment.txt
 
 FILES=*.rar
 echo $FILES
-for i in $FILES; do rar e $i -pnuelinks -o- -x@*.part*.rar ; done
+for i in $FILES; do rar x $i -pnuelinks -o- -x@*.part*.rar & done 
+wait
+for i in $FILES; do rar x $i -psoitgoes -o- -x@*.part*.rar & done 
+wait
+for i in $FILES; do rar x $i -pluelinks -o- -x@*.part*.rar & done 
+wait
+
