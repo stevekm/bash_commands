@@ -12,3 +12,5 @@ for i in $FILES; do rar x $i -pluelinks -o- -x@*.part*.rar & done
 wait
 for i in $FILES; do rar x $i -p'$$ PsyLL42 $$' -o- -x@*.part*.rar & done 
 wait
+for i in $FILES; do rar x $i -p'$ PsyLL42 $' -o- -x@*.part*.rar & done 
+wait
