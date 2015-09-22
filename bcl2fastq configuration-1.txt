@@ -1,0 +1,58 @@
+
+
+========================================
+
+
+# before: set path
+
+PROJ=150820_D00372_0313_BC6V0HANXX_Combo_HSQ_95
+BASE_CALLS_DIR=/ifs/data/sequence/Illumina/production/${PROJ}/Data/Intensities/BaseCalls
+
+
+========================================
+
+
+# standard
+
+/local/apps/bcl2fastq/1.8.4/bin/configureBclToFastq.pl \
+--input-dir ${BASE_CALLS_DIR} \
+--output-dir ${BASE_CALLS_DIR}/Unaligned \
+--fastq-cluster-count 0 \
+--mismatches 1
+
+
+# generate index read (blaser-style)
+
+mv -v ${BASE_CALLS_DIR}/SampleSheet.csv ${BASE_CALLS_DIR}/SampleSheet.0.csv
+/local/apps/bcl2fastq/1.8.4/bin/configureBclToFastq.pl \
+--input-dir ${BASE_CALLS_DIR} \
+--output-dir ${BASE_CALLS_DIR}/Unaligned \
+--fastq-cluster-count 0 \
+--use-bases-mask y*,y*,y*
+
+
+# dual 8bp index read (nextera)
+
+/local/apps/bcl2fastq/1.8.4/bin/configureBclToFastq.pl \
+--input-dir ${BASE_CALLS_DIR} \
+--output-dir ${BASE_CALLS_DIR}/Unaligned \
+--fastq-cluster-count 0 \
+--mismatches 1 \
+--use-bases-mask y*,i6n*,y*
+
+# using in-read barcodes (this example is for maria from aifantis lab, mismatch 1 not possible)
+
+/local/apps/bcl2fastq/1.8.4/bin/configureBclToFastq.pl \
+--input-dir ${BASE_CALLS_DIR} \
+--output-dir ${BASE_CALLS_DIR}/Unaligned \
+--fastq-cluster-count 0 \
+--use-bases-mask y41i5n*
+
+
+
+
+
+
+
+
+
