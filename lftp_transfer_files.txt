@@ -10,3 +10,4 @@ lftp -e "mirror --continue --only-newer --parallel=5 --no-empty-dirs -v /storage
 ###
 
 lftp -e "mirror -R {local dir} {remote dir}" -u {username},{password} {host}
+lftp -e "mirror --dry-run --continue --only-newer --parallel=5 --no-empty-dirs -R -v /Users/USERNAME/send_to_phone/ Music" ftp://10.184.13.102:3721/
