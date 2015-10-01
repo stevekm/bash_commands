@@ -6,3 +6,7 @@ mirror --continue --only-newer --parallel=5 --no-empty-dirs --exclude Music/ --e
 ### old vvv
 
 lftp -e "mirror --continue --only-newer --parallel=5 --no-empty-dirs -v /storage/emulated/0/ /home/steve/Samsung_Galaxy_S4_backup/storage/emulated/0/" ftp://192.168.1.7:3721
+
+####
+# send files, to Nexus 6
+lftp -e "mirror --continue --only-newer --parallel=5 --no-empty-dirs -R -v /Users/kellys04/send_to_phone/ Music" ftp://10.184.13.102:3721/
