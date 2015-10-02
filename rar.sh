@@ -1,3 +1,4 @@
+#!/bin/bash
 rar e -c- archive.rar -ppassword
 
 # get the comment from the archive
