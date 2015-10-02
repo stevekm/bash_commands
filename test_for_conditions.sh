@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [[ -s motif6.motif ]] ; then
 echo "file has data."
 else
