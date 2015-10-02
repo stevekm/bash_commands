@@ -1,16 +1,17 @@
-rar e -c- NL_WD40-F.rar -pnuelinks
+rar e -c- WD40.rar -ppassword
 
-rar cw NL_WD40-F.rar archive_comment.txt
+# get the comment from the archive
+rar cw WD40.rar archive_comment.txt
 
 FILES=*.rar
 echo $FILES
-for i in $FILES; do rar x $i -pnuelinks -o- -x@*.part*.rar & done 
+for i in $FILES; do rar x $i -ppassword1 -o- -x@*.part*.rar & done 
 wait
-for i in $FILES; do rar x $i -psoitgoes -o- -x@*.part*.rar & done 
+for i in $FILES; do rar x $i -ppassword2 -o- -x@*.part*.rar & done 
 wait
-for i in $FILES; do rar x $i -pluelinks -o- -x@*.part*.rar & done 
+for i in $FILES; do rar x $i -ppassword3 -o- -x@*.part*.rar & done 
 wait
-for i in $FILES; do rar x $i -p'$$ PsyLL42 $$' -o- -x@*.part*.rar & done 
+for i in $FILES; do rar x $i -ppassword4 -o- -x@*.part*.rar & done 
 wait
-for i in $FILES; do rar x $i -p'$ PsyLL42 $' -o- -x@*.part*.rar & done 
+for i in $FILES; do rar x $i -ppassword5 -o- -x@*.part*.rar & done 
 wait
