@@ -1,7 +1,7 @@
-rar e -c- WD40.rar -ppassword
+rar e -c- archive.rar -ppassword
 
 # get the comment from the archive
-rar cw WD40.rar archive_comment.txt
+rar cw archive.rar archive_comment.txt
 
 FILES=*.rar
 echo $FILES
