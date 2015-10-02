@@ -11,7 +11,7 @@ steve@Quark:~/Desktop/gif/crops/dropframes_fwd/tmp$ ls
 A=208
 for i in copy*.jpg; do new=$(printf "%08d.jpg" "$A"); mv -- "$i" "$new"; let A=A+1; done
 
-steve@Quark:~/Desktop/green_door_gif/crops/dropframes_fwd/tmp$ ls
+steve@Quark:~/Desktop/gif/crops/dropframes_fwd/tmp$ ls
 00000186.jpg  00000189.jpg  00000192.jpg  00000195.jpg  00000198.jpg  00000201.jpg  00000204.jpg  00000207.jpg  00000210.jpg  00000213.jpg  00000216.jpg  00000219.jpg  00000222.jpg  00000225.jpg  00000228.jpg
 00000187.jpg  00000190.jpg  00000193.jpg  00000196.jpg  00000199.jpg  00000202.jpg  00000205.jpg  00000208.jpg  00000211.jpg  00000214.jpg  00000217.jpg  00000220.jpg  00000223.jpg  00000226.jpg  00000229.jpg
 00000188.jpg  00000191.jpg  00000194.jpg  00000197.jpg  00000200.jpg  00000203.jpg  00000206.jpg  00000209.jpg  00000212.jpg  00000215.jpg  00000218.jpg  00000221.jpg  00000224.jpg  00000227.jpg
