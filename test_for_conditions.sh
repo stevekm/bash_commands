@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [[ -s motif6.motif ]] ; then
 echo "file has data."
 else
@@ -27,7 +29,8 @@ else
 echo "FILE are empty."
 fi ;
 
-<<Just_The_Motif_U_Want2,engine='bash',results='hide',eval=TRUE>>=  
+# R code chunk markup here even though its still bash code
+#<<Just_The_Motif_U_Want2,engine='bash',results='hide',eval=TRUE>>=  
 AR_full="MA0007.2_AR"
 
 MotifDir="/home/kellys/ChIP_Seq_Magda_completeWorkflow/RegulatedGene_Motifs"
@@ -62,4 +65,4 @@ echo "AR motif not found"
 fi ;
 
 
-@
+#@

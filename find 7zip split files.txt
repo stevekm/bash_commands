@@ -1,1 +1,0 @@
-find -type f -size +4000M | while read FILE; do 7z a /media/steve/JONATHAN\ HD/Movies/"${FILE}.7z" -mx0 -v4000m "$FILE"; done

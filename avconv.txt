@@ -1,9 +1,0 @@
-for f in *.m4a; do
-  avconv -i "$f" -aq 2 "${f%.m4a}.mp3"
-done
-
-for f in *.flac; 
-do (
-  avconv -i "$f" -aq 2 "${f%.flac}.mp3"
-) &
-done

@@ -1,7 +1,0 @@
-
-
-/opt/ChIP-Seq_kellys/C2YY3ACXX_s5_0_GSLv2-7_20_SL58765.fastq.gz
-
-/opt/ChIP-Seq_kellys/C2YY3ACXX_s6_0_GSLv2-7_20_SL58765.fastq.gz
-
-scp -P 501 kellys@helix.salisbury.edu:/opt/ChIP-Seq_kellys/C2YY3ACXX_s5_0_GSLv2-7_20_SL58765.fastq.gz /home/steve
