@@ -1,0 +1,8 @@
+####
+
+lftp -e "mirror --continue --only-newer --parallel=10 --no-empty-dirs --dry-run -v /storage/emulated/0/ /home/steve/Samsung_Galaxy_S4_backup/ ;
+mirror --continue --only-newer --parallel=10 --no-empty-dirs --dry-run -v /storage/extSdCard/ /home/steve/Samsung_Galaxy_S4_backup/" ftp://192.168.1.7:3721
+
+# figure out where the ftp server is being started from, might not be starting from root
+
+lftp -e "mirror --continue --only-newer --parallel=50 --no-empty-dirs -v . /home/steve/Samsung_Galaxy_S4_backup/storage/emulated/0/" ftp://192.168.1.7:3721
