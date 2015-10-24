@@ -1,6 +1,7 @@
-rar e -c- NL_WD40-F.rar -pnuelinks
+#!/bin/bash
+# rar e -c- NL_WD40-F.rar -pnuelinks
 
-rar cw NL_WD40-F.rar archive_comment.txt
+# rar cw NL_WD40-F.rar archive_comment.txt
 ######
 FILES=*.rar
 echo $FILES
@@ -16,6 +17,6 @@ for i in $FILES; do rar x "$i" -p'$ PsyLL42 $' -o- -x@*.part*.rar & done
 wait
 
 ####
-FILES=*.rar
-for i in $FILES; do rar x "$i" & done 
+# FILES=*.rar
+# for i in $FILES; do rar x "$i" & done 
 
