@@ -13,4 +13,7 @@ lftp -e "mirror --continue --only-newer --parallel=5 --no-empty-dirs -v /storage
 # lftp -e "mirror --continue --only-newer --parallel=5 --no-empty-dirs --exclude .Trash-1000/ -v / /home/steve/Android_Backups/Nexus_6_backups/sdcard" ftp://192.168.1.2:3721
 
 # without music dir (use this one)
-lftp -e "mirror --continue --only-newer --parallel=10 --no-empty-dirs --exclude Music/ --exclude .Trash-1000/ --exclude Android/ -v / /home/steve/Android_Backups/Nexus_6_backups/sdcard" ftp://192.168.1.2:3721
+lftp -e "mirror --continue --only-newer --parallel=3 --no-empty-dirs --exclude Music/ --exclude Android/ --exclude .Trash-1000/ -v / /home/steve/Android_Backups/Nexus_6_backups/sdcard" ftp://192.168.1.6:3721 &
+lftp -e "mirror --continue --only-newer --parallel=10 --no-empty-dirs --exclude .Trash-1000/ -v /Music/ /home/steve/Music/" ftp://192.168.1.6:3721
+
+lftp -e "mirror --continue --only-newer --parallel=3 --no-empty-dirs --exclude Music/ --exclude MEGA/ --exclude .Trash-1000/ -v / /home/steve/Android_Backups/Nexus_6_backups/sdcard" ftp://192.168.1.6:3721
