@@ -17,3 +17,8 @@ lftp -e "mirror --continue --only-newer --parallel=3 --no-empty-dirs --exclude M
 lftp -e "mirror --continue --only-newer --parallel=10 --no-empty-dirs --exclude .Trash-1000/ -v /Music/ /home/steve/Music/" ftp://192.168.1.6:3721
 
 lftp -e "mirror --continue --only-newer --parallel=3 --no-empty-dirs --exclude Music/ --exclude MEGA/ --exclude .Trash-1000/ -v / /home/steve/Android_Backups/Nexus_6_backups/sdcard" ftp://192.168.1.6:3721
+
+# send files
+# When using -R, the source directory is local and the target is remote.
+
+lftp -e "mirror --continue --only-newer --parallel=5 --no-empty-dirs --exclude .Trash-1000/ -vR /Users/steve/Android_Backup_Nexus6/ /Music/" ftp://192.168.1.6:3721
