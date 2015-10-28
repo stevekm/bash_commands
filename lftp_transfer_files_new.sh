@@ -12,13 +12,16 @@ lftp -e "mirror --continue --only-newer --parallel=5 --no-empty-dirs -v /storage
 
 # lftp -e "mirror --continue --only-newer --parallel=5 --no-empty-dirs --exclude .Trash-1000/ -v / /home/steve/Android_Backups/Nexus_6_backups/sdcard" ftp://192.168.1.2:3721
 
+# get files
 # without music dir (use this one)
-lftp -e "mirror --continue --only-newer --parallel=3 --no-empty-dirs --exclude Music/ --exclude Android/ --exclude .Trash-1000/ -v / /home/steve/Android_Backups/Nexus_6_backups/sdcard" ftp://192.168.1.6:3721 &
-lftp -e "mirror --continue --only-newer --parallel=10 --no-empty-dirs --exclude .Trash-1000/ -v /Music/ /home/steve/Music/" ftp://192.168.1.6:3721
-
+lftp -e "mirror --continue --only-newer --parallel=3 --no-empty-dirs --exclude Music/ --exclude Android/ --exclude .Trash-1000/ -v / /home/steve/Android_Backups/Nexus_6_backups/sdcard" ftp://192.168.1.6:3721
+# without MEGA
 lftp -e "mirror --continue --only-newer --parallel=3 --no-empty-dirs --exclude Music/ --exclude MEGA/ --exclude .Trash-1000/ -v / /home/steve/Android_Backups/Nexus_6_backups/sdcard" ftp://192.168.1.6:3721
 
-# send files
-# When using -R, the source directory is local and the target is remote.
+# get just the music
+lftp -e "mirror --continue --only-newer --parallel=5 --no-empty-dirs --exclude .Trash-1000/ -v /Music/ /home/steve/Music/" ftp://192.168.1.6:3721
 
-lftp -e "mirror --continue --only-newer --parallel=5 --no-empty-dirs --exclude .Trash-1000/ -vR /Users/steve/Android_Backup_Nexus6/ /Music/" ftp://192.168.1.6:3721
+
+# send files; send music dir from PC to phone
+# When using -R, the source directory is local and the target is remote.
+lftp -e "mirror --continue --only-newer --parallel=5 --no-empty-dirs --exclude .Trash-1000/ -vR /Users/steve/Android_Backup_Nexus6/Music/ /Music/" ftp://192.168.1.6:3721
