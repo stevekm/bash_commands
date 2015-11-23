@@ -1,0 +1,77 @@
+# handy things to include in your ~/.bashrc and ~/.bash_profile
+# some of these are for OS X, some are for Ubuntu, try and see which work
+# unless otherwise specified, these can go in .bashrc
+
+# typical bashrc stuff
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+       	. /etc/bashrc
+fi
+
+# User specific aliases and functions
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+
+
+# I added this line to try and make my bitbucket repos clone properly, they keep trying to call GTK GUI stuff
+# sometimes this makes github/bitbucket work better, sometimes it breaks things; you'll never know until you try...
+[ -n "$SSH_CONNECTION" ] && unset SSH_ASKPASS
+
+# my terminal color scheme for LOCAL machines (machine name in red)
+export PS1="\[\033[96m\]\u\[\033[m\]@\[\033[31m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+
+# my terminal color scheme for REMOTE machines, servers, etc. (host name in green)
+export PS1="\[\033[96m\]\u\[\033[m\]@\[\033[92m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+
+# more stuff about the colors from here: http://osxdaily.com/2013/02/05/improve-terminal-appearance-mac-os-x/
+# # this is supposed to do something, is it necessary? Give it a shot
+export CLICOLOR=1
+# I didn't like these for some reason but here they are
+# export LSCOLORS=ExFxBxDxCxegedabagacad
+# alias ls='ls -GFh'
+
+
+# append every command to .bash_history immediately upon the next bash prompt; does not seem to work in Xubuntu? Works in OS X, CentOS
+export PROMPT_COMMAND='history -a'
+
+# more history control
+# # remove duplicate entries
+export HISTCONTROL=ignoredups:erasedups
+# # something about appending commands to the history immediately? Maybe, can't remember exactly
+shopt -s histappend
+# # there is also this one but sometimes it does not work for me
+# export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+# # increase the history file sizes
+export HISTFILESIZE=400000000
+export HISTSIZE=10000
+# press up/down on the terminal to auto-fill/search for history of that command
+# # example; type "grep" then press up/down to auto-fill with history for that command
+# # put this in your ~/.inputrc, works in OS X, try it in *Ubuntu as well
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+
+
+# add things to your PATH so programs can be run on the command line easier, etc.. # this one from OS X
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+# override localization settings, use default system languages and bitwise sort, etc.
+export LC_ALL=C
+
+
+# in the .bash_profile
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/bin
+
+export PATH
