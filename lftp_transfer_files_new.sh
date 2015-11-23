@@ -1,4 +1,9 @@
 #!/bin/bash
+# these are commands to use with the lftp program; I use these in combination with an FTP server program on my Android smartphone
+# in order to push/pull/sync files on the phone with my computer. Typically I use the ES File Manager program on the Android device,
+# with the Remote Manager function. Make sure to note which directory the app has set as the starting point for the FTP server,
+# and that the device is connected to the same wifi as the computer you are trying to access it from
+# works even better if the Wifi is being broadcast directly from the PC, instead of through a router
 #### make sure the ftp server is set to start at phone's system root folder
 
 lftp -e "mirror --continue --only-newer --parallel=5 --no-empty-dirs -v /storage/emulated/0/ /home/steve/Samsung_Galaxy_S4_backup/storage/emulated/0/ &
