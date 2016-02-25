@@ -1,7 +1,7 @@
 #!/bin/bash
 # If pattern exists within files, perform action, else do nothing (or another action)
 
-$PATTERN="MA0007.2_AR" # the gene we are interested in
+PATTERN="MA0007.2_AR" # the gene we are interested in
 cd ~/OutputDirectory/ # where your data files are stored
 
 if [[ -n $(grep -Fl $PATTERN *.txt) ]] ; then
