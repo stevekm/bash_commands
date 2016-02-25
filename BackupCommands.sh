@@ -18,26 +18,3 @@ less /var/log/apt/history.log | grep Commandline>>/home/steve/Desktop/aptCommand
 
 
 # http://askubuntu.com/questions/9135/how-to-backup-settings-and-list-of-installed-packages
-
-# I was getting errors trying to copy my screen shots folder to a USB drive, so I wanted to remove some characters from the names of the files.
-
-# I ran this
-
-find -name "*" -type f | rename 's/__-_/./g'
-
-# It deleted all my files instead
-
-# :(
-
-# but I did figure out how to paste all the filenames in a directory into a text document
-
-for f in *; do echo "$f" >> this_damned_test.txt; done
-
-
-# Also whats wrong with this loop?
-
-
-LOGFILE="/var/log/apt/history.log.*"
-for i in $LOGFILE; do zless /var/log/apt/"$i" | grep "\ install\ ">>/home/steve/Desktop/installed_aptget.txt; done
-
-# trying to output all my installed packages to a text file
